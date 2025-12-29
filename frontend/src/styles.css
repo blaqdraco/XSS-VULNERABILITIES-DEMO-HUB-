@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap");
+
+:root {
+  --bg: #06070f;
+  --panel: rgba(16, 18, 34, 0.72);
+  --border: rgba(0, 255, 255, 0.2);
+  --text: #e8f6ff;
+  --muted: #8aa1b5;
+  --accent: #27d8f3;
+  --accent-2: #7c3bff;
+  --danger: #ff5c8a;
+  --glow: 0 0 18px rgba(39, 216, 243, 0.4);
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 20% 20%, rgba(39, 216, 243, 0.08), transparent 25%),
+    radial-gradient(circle at 80% 0%, rgba(124, 59, 255, 0.1), transparent 28%),
+    radial-gradient(circle at 50% 80%, rgba(255, 92, 138, 0.08), transparent 30%),
+    #06070f;
+  color: var(--text);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #82e6ff;
+}
+
+.app-shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 14px 18px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--glow);
+}
+
+.nav-link {
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  background: rgba(39, 216, 243, 0.12);
+  color: #fff;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--glow);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  margin: 0 0 8px 0;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(39, 216, 243, 0.12);
+  color: var(--text);
+  font-size: 12px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  background: linear-gradient(120deg, rgba(39, 216, 243, 0.18), rgba(124, 59, 255, 0.18));
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  box-shadow: 0 0 14px rgba(39, 216, 243, 0.5);
+  transform: translateY(-1px);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+}
+
+.helper {
+  color: var(--muted);
+  margin: 0 0 12px 0;
+}
+
+.code-pill {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 6px 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--glow);
+}
+
+.card-accent {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-accent::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius);
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(39, 216, 243, 0.35), rgba(124, 59, 255, 0.35));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+.card-accent > * {
+  position: relative;
+}
+
+.danger {
+  color: var(--danger);
+}
+
+.small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.flex-gap {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
