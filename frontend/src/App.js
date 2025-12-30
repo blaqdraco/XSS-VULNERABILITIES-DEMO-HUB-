@@ -19,18 +19,10 @@ const App = () => {
         <Route path="/stored" element={<StoredXSS />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>
-      <div className="panel card-accent" style={{ marginTop: 16 }}>
-        <div className="section-title">
-          <span className="badge">Disclaimer</span>
-          <span>Academic demo only</span>
-        </div>
-        <p className="helper">
-          This demonstration is strictly for educational purposes. The vulnerabilities shown
-          are intentional misconfigurations, not flaws in Django or React, and run only in a
-          controlled lab environment with no real data.
-        </p>
-        <p className="small">Prepared by: Imani L. Kirenga</p>
-      </div>
+      <footer className="footer-disclaimer">
+        Academic demo only. Intentional vulnerabilities for education in a controlled lab; do not test systems
+        you do not own or have permission to assess. Prepared by Imani L. Kirenga.
+      </footer>
     </div>
   );
 };

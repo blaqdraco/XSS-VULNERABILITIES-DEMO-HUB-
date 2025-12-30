@@ -187,3 +187,12 @@ a:hover {
   gap: 10px;
   flex-wrap: wrap;
 }
+
+.footer-disclaimer {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  font-style: italic;
+  text-align: center;
+  opacity: 0.85;
+}

@@ -34,6 +34,15 @@ const StoredXSS = () => {
     }
   };
 
+  const deleteComment = async (id) => {
+    try {
+      await api.delete(`/comments/${id}/`);
+      setComments((prev) => prev.filter((c) => c.id !== id));
+    } catch (err) {
+      setError("Failed to delete comment.");
+    }
+  };
+
   return (
     <div className="panel card-accent">
       <div className="section-title">
@@ -64,7 +73,7 @@ const StoredXSS = () => {
       {error && <p className="danger">{error}</p>}
       <div>
         {comments.map((c) => (
-          <CommentBox key={c.id} comment={c} />
+          <CommentBox key={c.id} comment={c} onDelete={() => deleteComment(c.id)} />
         ))}
       </div>
     </div>

@@ -14,3 +14,8 @@ def reflected_search(request):
 class CommentListCreateView(generics.ListCreateAPIView):
     queryset = Comment.objects.all().order_by("-created")
     serializer_class = CommentSerializer
+
+
+class CommentDetailView(generics.DestroyAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
